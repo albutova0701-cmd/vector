@@ -33,3 +33,23 @@ img, svg { max-width:100%; }
   .about-note span { font-size:13px; }
   .about-note strong { font-size:clamp(42px,11vw,56px); }
 }
+
+
+/* Keep the technical drawing below the copy on touch devices, including browser zoomed-out views. */
+@media (hover: none) and (pointer: coarse) {
+  .hero { min-height: 0; padding-bottom: 0; }
+  .hero__inner { padding-top: 170px; padding-bottom: 0; }
+  .hero-drawing {
+    position: relative;
+    top: auto; right: auto; bottom: auto; left: auto;
+    display: block;
+    width: min(390px, calc(100% - 48px));
+    height: 210px;
+    margin: 64px 24px 54px auto;
+    opacity: .26;
+    z-index: 0;
+  }
+  .drawing-line { width: calc(100% + 30px); left: -15px; top: 112px; }
+  .drawing-circle { width: 105px; height: 105px; right: 18px; top: 28px; }
+  .hero__inner { z-index: 1; }
+}
